@@ -1,0 +1,29 @@
+{
+  "name": "node3p-web",
+  "description": "A web interface for Node3p.",
+  "main": "server",
+  "version": "0.1.0",
+  "author": "Nick Campbell (http://github.com/ncb000gt)",
+  "bin": { "node3p-web": "node3p-web" },
+  "engines": { "node": ">= 0.1.100" },
+  "repository": {
+        "type": "git",
+        "url": "http://github.com/ncb000gt/node3p.git"
+   },
+   "licenses": [
+     {
+        "type": "MIT",
+        "url": "http://www.opensource.org/licenses/mit-license.php" 
+     }
+   ],
+   "bugs": {
+     "web" : "http://github.com/ncb000gt/node3p/issues"
+   },
+   "dependencies": {
+     "node3p": ">=0.2.0",
+     "connect": ">=0.2.5",
+     "spark": ">=0.1.2",
+     "jade": ">=0.5.2",
+     "formidable": ">=0.9.8"
+   }
+}

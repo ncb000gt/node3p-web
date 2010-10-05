@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+spark --appPath ~/.node_libraries/node3p-web
