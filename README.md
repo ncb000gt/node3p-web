@@ -25,7 +25,7 @@ Configuration
 
 The server works with a configuration file that is to be located at `/usr/local/etc/node3p-web/config.js`. The config file uses the regular exports syntax. The options are as follows:
 * downloadLocation: the path to download your files to. if preceeded by a ~ the users home directory will be used.
-
+* there are no other options right now. :)
 
 Alpha Warning
 ==============
