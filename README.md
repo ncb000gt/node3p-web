@@ -13,10 +13,18 @@ How to Use It
 * Install the required libs
 ** From source, just clone this and type `npm install` from the cloned directory 
 ** From npm, type `npm install node3p` 
+* Run `node3p-web` from the CLI
 * Buy some tunes
 * Open the web interface
 * Upload
 * Profit
+
+
+Configuration
+==============
+
+The server works with a configuration file that is to be located at `/usr/local/etc/node3p-web/config.js`. The config file uses the regular exports syntax. The options are as follows:
+* downloadLocation: the path to download your files to. if preceeded by a ~ the users home directory will be used.
 
 
 Alpha Warning
