@@ -5,14 +5,18 @@ var connect = require('connect')
 ,jade = require('jade')
 ,path = require('path')
 ,fs = require('fs')
-,file = require('./lib/file');
+,file = require('./lib/file')
+,sockets = require('./sockets')
+,emitter = require('events').EventEmitter;
 
 var DOWNLOAD_LOCATION = '/tmp/node3p/';
+var LOG_PATH = '/var/log/node3p-web.log';
 
 //TODO: Make more robust
 if (path.existsSync('/usr/local/etc/node3p-web/config.js')) {
   var config = require('/usr/local/etc/node3p-web/config');
   if ('downloadLocation' in config) DOWNLOAD_LOCATION = file.path.abspath(config.downloadLocation);
+  if ('logPath' in config) LOG_PATH = file.path.abspath(config.logPath);
 }
 
 var TEMPLATE_ROOT = __dirname + '/templates';
@@ -41,6 +45,7 @@ function index(app) {
 
 			  n3p.on('end', function(files) {
 				   sys.puts('All files downloaded');
+				   dlEvents.emit('finished', files);
 				 });
 
 			  var file = files.file;
@@ -57,11 +62,22 @@ function index(app) {
 	   });
 }
 
+var logStream = fs.createWriteStream(LOG_PATH);
+
 var server = connect.createServer(
-  connect.logger({buffer: true}),
-  connect.staticProvider(__dirname + '/static')
+  connect.logger({buffer: true, stream: logStream}),
+  connect.staticProvider(__dirname + '/public')
 );
 
 server.use(connect.router(index));
+
+function DownloadEvents() {
+  emitter.call(this);
+}
+sys.inherits(DownloadEvents, emitter);
+
+var dlEvents = new DownloadEvents();
+
+sockets.setup(server, dlEvents);
 
 module.exports = server;
