@@ -21,17 +21,21 @@ if (path.existsSync('/usr/local/etc/node3p-web/config.js')) {
 
 var TEMPLATE_ROOT = __dirname + '/templates';
 
+function render_index(req, res, errs, message) {
+  var locals = {error_message: message};
+
+  res.writeHead(200, { "Content-Type": "text/html" });
+  jade.renderFile(
+    TEMPLATE_ROOT + '/index.jade',
+    {locals: locals},
+    function(err, html){
+      res.end(html);
+    }
+  );
+}
+
 function index(app) {
-  app.get('/', function (req, res) {
-	    res.writeHead(200, { "Content-Type": "text/html" });
-	    jade.renderFile(
-	      TEMPLATE_ROOT + '/index.jade',
-	      { },
-	      function(err, html){
-		res.end(html);
-	      }
-	    );
-	  });
+  app.get('/', render_index);
   app.post('/', function (req, res) {
              sys.debug('uploading!');
 	     var file_info = {};
@@ -39,6 +43,12 @@ function index(app) {
 	     var form = new forms.IncomingForm();
 	     var amz_data, filename;
 	     form.parse(req, function(err, fields, files){
+			  //TODO: other validation (file types and so on)
+			  if (!files || !(files.file)) {
+			    render_index(req, res, null, "You need to select a file.");
+			    return;
+			  }
+
 			  res.writeHead(200, { "Content-Type": "text/html" });
 
 			  var n3p = new node3p.Node3p(DOWNLOAD_LOCATION);

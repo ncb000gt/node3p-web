@@ -4,17 +4,23 @@ html(lang="en")
     title Node3p Web Downloader
     link(href="/css/core.css",rel="stylesheet",type="text/css")
   body
-    #header
-      h1 Node3p Web Downloader
-    #content
-      form(action="/",method="POST",enctype="multipart/form-data")
-        fieldset
-          input(type="file",id="file",name="file")
-          input(type="submit",value="Download")
-    #footer
-      p
-        | Node3p was developed by Nick Campbell (
-        a(href="http://twitter.com/ncb000gt") @ncb000gt
-        | ). 
-        a(href="http://github.com/ncb000gt/node3p-web") Node3p-web is open sourced 
-        | under the MIT license. Enjoy.
+    #container
+      #header
+        h1 Node3p Web
+      #content
+        p Find an AmazonMP3 file (something with a .amz extension). Click 'Upload' and wait.
+        - if (error_message)
+          p.err There was a problem: #{error_message}
+        form(action="/",method="POST",enctype="multipart/form-data")
+          fieldset.file
+            input(,type="file",id="file",name="file")
+          fieldset
+            input(type="submit",value="Upload")
+      #footer
+        p
+          | Node3p was developed by Nick Campbell (
+          a(href="http://twitter.com/ncb000gt") @ncb000gt
+          | ).
+        p
+          a(href="http://github.com/ncb000gt/node3p-web") Node3p-web is open sourced 
+          | under the MIT license. Enjoy.

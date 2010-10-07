@@ -8,19 +8,23 @@ html(lang="en")
     script(src="/js/site.js")
     link(href="/css/core.css",rel="stylesheet",type="text/css")
   body
-    #header
-      h1 Node3p Web Downloader
-    #content
-      Amazon MP3 file was uploaded successfully.
-      img(src="/images/hamsters/hamster-redbull.jpg")
-      p Our finest are on it. Please hang tight.
-      .finished
-        h3 Downloaded files
-        ul.files
-    #footer
-      p
-        | Node3p was developed by Nick Campbell (
-        a(href="http://twitter.com/ncb000gt") @ncb000gt
-        | ). 
-        a(href="http://github.com/ncb000gt/node3p-web") Node3p-web is open sourced 
-        | under the MIT license. Enjoy.
+    #container
+      #header
+        h1 Node3p Web Downloader
+      #content
+        p Amazon MP3 file was uploaded successfully.
+        .randhamster
+          img(src="/images/hamsters/hamster-redbull.jpg")
+        p Our finest are on it. Please hang tight.
+        .finished
+          h3 Downloaded files
+          .files
+            ul.filelist
+      #footer
+        p
+          | Node3p was developed by Nick Campbell (
+          a(href="http://twitter.com/ncb000gt") @ncb000gt
+          | ).
+        p
+          a(href="http://github.com/ncb000gt/node3p-web") Node3p-web is open sourced 
+          | under the MIT license. Enjoy.

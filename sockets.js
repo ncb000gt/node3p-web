@@ -6,7 +6,6 @@ exports.setup = function(server, dlEvents) {
 
   socket.on('connection', function(client) {
 	      dlEvents.on('finished', function(files) {
-			    sys.debug('finished with files');
 			    client.send(JSON.stringify({files: files}));
 			  });
 	    });
