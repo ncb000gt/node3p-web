@@ -7,6 +7,7 @@ $(document).ready(function() {
 				$.each(data.files, function(idx, file) {
 					 $('.filelist').append('<li>'+idx+': '+file.filename+'</li>');
 				       });
+				$('.finest').css({display:'none'});
 				$('.finished').css({display:'block'});
 				socket.disconnect();
 			      });

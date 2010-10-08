@@ -11,8 +11,11 @@ How to Use It
 
 * Install NodeJS
 * Install the required libs
-** From source, just clone this and type `npm install` from the cloned directory 
-** From npm, type `npm install node3p` 
+** From source, just clone this project
+*** Update the submodules
+**** From the CLI, `git submodule update --init --recursive`
+*** Type `npm install` from the cloned directory 
+** From npm, type `npm install node3p`
 * Run `node3p-web` from the CLI
 * Buy some tunes
 * Open the web interface

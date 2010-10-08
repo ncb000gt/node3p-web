@@ -8,41 +8,28 @@ body{
     width:65%;
     margin:0 auto;
 }
+.contentbox{
+    background:#2E9345;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-bottom-radius: 10px;
+    border:3px solid #fff;
+    width:100%;
+    padding:10px;
+}
 #header{
     background:#2E9345;
     height:75px;
-    width:100%;
-    margin:0 0 40px 0;
-    padding:10px;
-    -webkit-border-bottom-right-radius: 10px;
-    -webkit-border-bottom-left-radius: 10px;
-    -moz-border-radius-bottomright: 10px;
-    -moz-border-radius-bottomleft: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border:3px solid #fff;
-    border-top:0;
+    margin:10px 0 40px 0;
 }
 #content p{
     text-align:center;
 }
 #footer {
     text-align:center;
-    position:absolute;
-    bottom:0;
     background:#2E9345;
-    width:65%;
     height:75px;
-    margin:0;
-    padding:10px;
-    -webkit-border-top-right-radius: 10px;
-    -webkit-border-top-left-radius: 10px;
-    -moz-border-radius-topright: 10px;
-    -moz-border-radius-topleft: 10px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border:3px solid #fff;
-    border-bottom:0;
+    margin:10px 0;
 }
 h1{
     padding:0;
@@ -64,12 +51,9 @@ form{
 }
 .finished{
     display:none;
+    margin-bottom:80px;
 }
-.files{
-    overflow:scroll;
-    height:200px;
-}
-.randhamster{
-    margin:10 auto;
-    width:50%;
+.randhamster img{
+    display:block;
+    margin:auto;
 }

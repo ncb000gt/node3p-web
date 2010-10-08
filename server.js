@@ -52,10 +52,11 @@ function index(app) {
 			  res.writeHead(200, { "Content-Type": "text/html" });
 
 			  var n3p = new node3p.Node3p(DOWNLOAD_LOCATION);
-
-			  n3p.on('end', function(files) {
+			  var downloaded_files = [];
+			  n3p.on('end', function(downloaded) {
+				   files = downloaded;
 				   sys.puts('All files downloaded');
-				   dlEvents.emit('finished', files);
+				   dlEvents.emit('finished', downloaded);
 				 });
 
 			  var file = files.file;
@@ -63,7 +64,7 @@ function index(app) {
 
 			  jade.renderFile(
 			    TEMPLATE_ROOT + '/uploaded.jade',
-			    { },
+			    {locals:{files: downloaded_files}},
 			    function(err, html){
 			      res.end(html);
 			    }
