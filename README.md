@@ -44,6 +44,14 @@ Alpha Warning
 This is completely in alpha stages. The data downloads but the code is complete and utter crap. You'll likely want to look at it like you look at an eclipse or your eyeballs may melt. Assuming you are crazy enough to try this, please throw bugs at me like you might a can of Redbull and I'll try my best to hammer through them. Also, patches are very welcome.
 
 
+Browser Support
+==============
+
+Browsers that run Canvas (for the MooFlow).
+
+I run Linux. I don't test everything. But, if you'd like something to be working I will take pull requests, patches or bugs. Feel free to submit them.
+
+
 Dependencies
 ==============
 
