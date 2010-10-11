@@ -45,6 +45,15 @@ Dependencies
 * npm install [spark](http://github.com/senchalabs/spark/)
 * npm install [jade](http://github.com/senchalabs/spark/)
 * npm install [formidable](http://github.com/senchalabs/spark/)
+* CouchDB
+** I wanted to be able to store the data on what was being downloaded. SO, I looked to CouchDB to provide the storage. Good speed, easy-ish setup (specially with couchone) and provides the required functionality.
+* npm install [couchdb](http://github.com/felixge/node-couchdb/)
+
+
+Special Thanks
+==============
+
+In the 0.2.0 version, I made use of [MooFlow](http://www.outcut.de/MooFlow/) which is a JS/Canvas based coverflow library. It works beautifully and I didn't write it so I want to give credit where it's due. Be sure to take a look at it. With this, we can show a coverflow of the latest downloads and the images. Yay eyecandy! ;D
 
 
 Disclaimer

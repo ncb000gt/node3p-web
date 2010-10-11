@@ -7,6 +7,7 @@ var connect = require('connect')
 ,fs = require('fs')
 ,file = require('./lib/file')
 ,sockets = require('./sockets')
+,store = require('./store')
 ,emitter = require('events').EventEmitter;
 
 var DOWNLOAD_LOCATION = '/tmp/node3p/';
@@ -22,16 +23,20 @@ if (path.existsSync('/usr/local/etc/node3p-web/config.js')) {
 var TEMPLATE_ROOT = __dirname + '/templates';
 
 function render_index(req, res, errs, message) {
-  var locals = {error_message: message};
-
-  res.writeHead(200, { "Content-Type": "text/html" });
-  jade.renderFile(
-    TEMPLATE_ROOT + '/index.jade',
-    {locals: locals},
-    function(err, html){
-      res.end(html);
-    }
-  );
+  Store.getAlbums(function(albums) {
+		    var locals = {
+		      error_message: message
+		    };
+		    locals.albums = albums;
+		    res.writeHead(200, { "Content-Type": "text/html" });
+		    jade.renderFile(
+		      TEMPLATE_ROOT + '/index.jade',
+		      {locals: locals},
+		      function(err, html) {
+			res.end(html);
+		      }
+		    );
+		  });
 }
 
 function index(app) {
@@ -88,6 +93,8 @@ function DownloadEvents() {
 sys.inherits(DownloadEvents, emitter);
 
 var dlEvents = new DownloadEvents();
+
+var Store = new store.Store(dlEvents);
 
 sockets.setup(server, dlEvents);
 

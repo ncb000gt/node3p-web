@@ -3,6 +3,13 @@ html(lang="en")
   head
     title Node3p Web Downloader
     link(href="/css/core.css",rel="stylesheet",type="text/css")
+    link(href="/css/MooFlowNode3p.css",rel="stylesheet",type="text/css")
+    link(href="/css/ReMooz.css",rel="stylesheet",type="text/css")
+    script(src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.5/mootools-yui-compressed.js")
+    script(src="/js/mootools-1.2-more.js")
+    script(src="/js/ReMooz.js")
+    script(src="/js/MooFlow.js")
+    script(src="/js/home.js")
   body
     #container
       #header.contentbox
@@ -16,6 +23,10 @@ html(lang="en")
             input(,type="file",id="file",name="file")
           fieldset
             input(type="submit",value="Upload")
+        div(id="MooFlow")
+          - each album in albums
+            a(href=album.key.large_image,rel="image")
+              img(src=album.key.image,title=album.key.album+' by ' +album.key.primary)
       #footer.contentbox
         p
           | Node3p and Node3p-web were developed by Nick Campbell (

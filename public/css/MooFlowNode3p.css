@@ -1,0 +1,117 @@
+.mf{
+    color:#333;
+    background:#fff;
+    font-size:14px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-bottom-radius: 10px;
+    border:3px solid #fff;
+    width:100%;
+    padding:10px;
+}
+.mf * {
+	outline-color:invert;
+	outline-style:none;
+	outline-width:medium;
+	-moz-user-select: none;
+	border:none;
+	padding:0;
+	margin:0
+}
+.mf div.loader{
+	position:absolute;
+	text-align:center;
+	z-index:20;
+	margin:1em auto;
+	top:45%;
+	width:100%;
+	background:#fff url(/images/white-skin/spinner.gif) no-repeat 50% 0;
+	padding:30px 0
+}
+.mf h3.mfHeader {
+    text-align:center;
+    font-size:2em;
+}
+.mf div.caption {
+	position:absolute;
+	text-align:center;
+	z-index:10;
+	margin:1em auto;
+	bottom:50px;
+	width:100%;
+}
+.mf div.mfNav{
+	position:absolute;
+	z-index:9;
+	margin:0 auto;
+	text-align:center;
+	width:100%;
+	bottom:20px;
+	font-size:1px;
+	line-height:1px;
+}
+.mf div.autoPlayCon{
+	float:left;
+	width:10%;
+	padding-left:3%;
+	height:32px;
+}
+.mf a.play, .mf a.stop{
+	width:34px;
+	height:32px;
+	float:left;
+	cursor:pointer;
+}
+.mf a.play{
+	background:url(/images/white-skin/play.gif) no-repeat;
+}
+.mf a.stop{
+	background:url(/images/white-skin/stop.gif) no-repeat;
+}
+.mf div.sliderCon{
+	float:left;
+	width:74%;
+}
+.mf a.sliderNext{
+	background:url(/images/white-skin/left.gif) no-repeat;
+}
+.mf a.sliderPrev{
+	background:url(/images/white-skin/right.gif) no-repeat;
+}
+.mf a.sliderNext, .mf a.sliderPrev{
+	text-decoration:none;
+	width:31px;
+	height:31px;
+	cursor:pointer;
+	float:left;
+}
+.mf div.resizeCon{
+	float:right;
+	width:10%;
+	padding-right:3%;
+	height:32px;
+}
+.mf a.resize{
+	width:32px;
+	height:32px;
+	float:right;
+	cursor:pointer;
+	background:url(/images/white-skin/resize.gif) no-repeat;
+}
+.mf div.slider{
+	background:url(/images/white-skin/middle.gif) repeat-x;
+	height:31px;
+	position:relative;
+	text-align:left;
+	float:left;
+}
+.mf div.knob{
+	margin-top:5px;
+	height:21px;
+	background:url(/images/white-skin/middle-slider.gif) repeat-x right center;
+}
+.mf div.knobleft{
+	background:url(/images/white-skin/left-slider.gif) left;
+	width:3px;
+	height:21px;
+}
