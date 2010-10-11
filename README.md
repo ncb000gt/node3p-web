@@ -68,6 +68,8 @@ Dependencies
 Special Thanks
 ==============
 
+To Amazon. The service is fantastic.
+
 In the 0.2.0 version, I made use of [MooFlow](http://www.outcut.de/MooFlow/) which is a JS/Canvas based coverflow library. It works beautifully and I didn't write it so I want to give credit where it's due. Be sure to take a look at it. With this, we can show a coverflow of the latest downloads and the images. Yay eyecandy! ;D
 
 
@@ -77,7 +79,11 @@ Disclaimer
 Right now there is very little error handling and upload validation. This will be coming, but I am not responsible for someone uploading files that could destroy your system. I do love patches and pull requests so if you are able to hack it in before I can, go for it!
 
 
-License
+License and Attribution
 ===============
 
-see license file
+Cover images are provided by [Amazon](http://www.amazon.com/)
+MooFlow is from [Outcut](http://www.outcut.de/)
+ReMooz is from [Digitarald](http://digitarald.de/projects/)
+
+MIT unless otherwise stated (see LICENSE file for more)
