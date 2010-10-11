@@ -328,7 +328,7 @@ ReMooz.factory(new Options).factory({
 
 	options: {
 		zIndex: 41,
-		zIndexFocus: 42,
+		zIndexFocus: 700,
 		query: 'a.remooz',
 		modal: false
 	},

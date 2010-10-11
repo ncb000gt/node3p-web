@@ -74,7 +74,7 @@
 	width:					100%;
 	height:					100%;
 	background-color:		#000;
-	z-index:				99;
+	z-index:				600;
 	-moz-border-radius:		5px;
 	-webkit-border-radius:	5px;
 	/* shadow opacity differs from box shadow because its default set to opacity 0.8 */
@@ -85,7 +85,7 @@
 	position:				relative;
 	padding:				5px 15px;
 	color:					#fff;
-	z-index:				101;
+	z-index:				601;
 	font:					11px/1.5 Verdana, Geneva, Arial, Helvetica, sans-serif;
 }
 
