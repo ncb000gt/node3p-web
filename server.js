@@ -12,12 +12,14 @@ var connect = require('connect')
 
 var DOWNLOAD_LOCATION = '/tmp/node3p/';
 var LOG_PATH = '/var/log/node3p-web.log';
+var COUCH_CONFIG = {};
 
 //TODO: Make more robust
 if (path.existsSync('/usr/local/etc/node3p-web/config.js')) {
   var config = require('/usr/local/etc/node3p-web/config');
   if ('downloadLocation' in config) DOWNLOAD_LOCATION = file.path.abspath(config.downloadLocation);
   if ('logPath' in config) LOG_PATH = file.path.abspath(config.logPath);
+  if ('couchConfig' in config) COUCH_CONFIG = config.couchConfig;
 }
 
 var TEMPLATE_ROOT = __dirname + '/templates';
@@ -94,7 +96,7 @@ sys.inherits(DownloadEvents, emitter);
 
 var dlEvents = new DownloadEvents();
 
-var Store = new store.Store(dlEvents);
+var Store = new store.Store(COUCH_CONFIG, dlEvents);
 
 sockets.setup(server, dlEvents);
 

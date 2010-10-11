@@ -1,15 +1,42 @@
 var sys = require('sys')
 , couchdb = require('couchdb')
-,client = couchdb.createClient(5983, 'localhost')
-,db = client.db('node3p-web')
+,client = null
+,db = null
 ,crypto = require('crypto')
 ,request = require('request')
 ,base64 = require('base64');
 
-function Store(dlEvents) {
+function Store(couchConfig, dlEvents) {
   if (!dlEvents) throw new Error("Must include the event emitter.");
 
-  if (!(db.exists())) db.create();
+  var host, port, user, password;
+  if ('host' in couchConfig) {
+    host = couchConfig.host;
+  } else {
+    host = 'localhost';
+  }
+
+  if ('port' in couchConfig) {
+    port = couchConfig.port;
+  } else {
+    port = 5984;
+  }
+
+  if ('user' in couchConfig) {
+    user = couchConfig.user;
+  }
+
+  if ('password' in couchConfig) {
+    password = couchConfig.password;
+  }
+
+  if (user && password) {
+    client = couchdb.createClient(port, host, user, password);
+  } else {
+    client = couchdb.createClient(port, host);
+ }
+
+  db = client.db('node3p-web');
 
   this.dlEvents = dlEvents;
 

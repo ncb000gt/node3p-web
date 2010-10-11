@@ -16,6 +16,8 @@ How to Use It
 **** From the CLI, `git submodule update --init --recursive`
 *** Type `npm install` from the cloned directory 
 ** From npm, type `npm install node3p`
+* Get and install couchapp (python OMGWTF?!?)
+** Jump into the couchapp directory and push the designs into your couchdb (wherever that may be).
 * Run `node3p-web` from the CLI
 * Buy some tunes
 * Open the web interface
@@ -29,7 +31,12 @@ Configuration
 The server works with a configuration file that is to be located at `/usr/local/etc/node3p-web/config.js`. The config file uses the regular exports syntax. The options are as follows:
 
 * downloadLocation: the path to download your files to. if preceeded by a ~ the users home directory will be used.
+* logPath: Path for the apache style logs to be written. all else is stdout for now...tho this will change at some point.
+* couchConfig: Json object representing couchdb configurations.
+** host: CouchDB hostname
+** port: CouchDB port
 * there are no other options right now. :)
+
 
 Alpha Warning
 ==============

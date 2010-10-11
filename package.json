@@ -2,7 +2,7 @@
   "name": "node3p-web",
   "description": "A web interface for Node3p.",
   "main": "server",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Nick Campbell (http://github.com/ncb000gt)",
   "bin": { "node3p-web": "node3p-web" },
   "engines": { "node": ">= 0.1.100" },
