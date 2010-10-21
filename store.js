@@ -53,9 +53,9 @@ Store.prototype.saveFiles = function(files) {
     file.created = d;
     var key = crypto.createHash('md5').update(file.filename).digest('hex');
     db.saveDoc(key, file, function(err, ok) {
-		 //if (err) throw new Error(JSON.stringify(err));
-		 //sys.debug('File "'+file.filename+'" saved in couch to "'+key+'".');
-	       });
+                 //if (err) throw new Error(JSON.stringify(err));
+                 //sys.debug('File "'+file.filename+'" saved in couch to "'+key+'".');
+               });
   }
 };
 
@@ -63,14 +63,14 @@ Store.prototype.getFiles = function(count, cb) {
   var query = {};
   if (count) query.limit = count;
   db.view('node3p-web', 'getFiles', query, function(err, results) {
-	    if (err) throw new Error(JSON.stringify(err));
-	    if (cb) cb(results.rows);
-	  });
+            //if (err) throw new Error(JSON.stringify(err));
+            if (cb) cb(err, results.rows);
+          });
 };
 
 Store.prototype.getAlbums = function(cb) {
   db.view('node3p-web', 'getAlbums', {group:true}, function(err, results) {
-	    if (err) throw new Error(JSON.stringify(err));
-	    if (cb) cb(results.rows);
-	  });
+            if (err) throw new Error(JSON.stringify(err));
+            if (cb) cb(err, results.rows);
+          });
 };
