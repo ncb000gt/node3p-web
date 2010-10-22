@@ -1,29 +1,29 @@
-var myMooFlowPage = {
-  start: function(){
-    var mf = new MooFlow($('MooFlow'), {
-			   bgColor: '#fff',
-			   header: 'Recent Downloads',
-			   useResize: true,
-			   useSlider: true,
-			   useCaption: true,
-			   useMouseWheel: true,
-			   useKeyInput: true,
-			   useViewer: true,
-			   onClickView: function(obj){
-			     var img = new Element('img',{src:obj.src, title:obj.title, alt:obj.alt, styles:obj.coords}).setStyles({'position':'absolute','border':'none'});
-			     var link = new Element('a',{'class':'remooz-element','href':obj.href,'title':obj.title, styles:{'border':'none'}});
-			     document.body.adopt(link.adopt(img));
-			     var remooz = new ReMooz(link, {
-						       centered: true,
-						       resizeFactor: 0.8,
-						       origin: link.getElement('img'),
-						       onCloseEnd: function(){link.destroy();}
-						     });
-			     remooz.open();
-			   }
-			 });
-  }
+$(document).ready(
+  function(){
 
-};
+    // Local copy of jQuery selectors, for performance.
+    var jpPlayTime = $("#jplayer_play_time");
+    var jpTotalTime = $("#jplayer_total_time");
+    var jpStatus = $("#demo_status"); // For displaying information about jPlayer's status in the demo page
 
-window.addEvent('domready', myMooFlowPage.start);
+    $("#jquery_jplayer").jPlayer({
+                                   ready: function () {
+                                     this.element.jPlayer("setFile", "http://www.miaowmusic.com/audio/mp3/Miaow-07-Bubble.mp3", "http://www.miaowmusic.com/audio/ogg/Miaow-07-Bubble.ogg").jPlayer("play");
+                                     ///demoInstanceInfo(this.element, $("#demo_info")); // This displays information about jPlayer's configuration in the demo page
+                                   },
+                                   volume: 50,
+                                   oggSupport: false,
+                                   preload: 'none'
+                                 })
+      .jPlayer("onProgressChange", function(loadPercent, playedPercentRelative, playedPercentAbsolute, playedTime, totalTime) {
+                 jpPlayTime.text($.jPlayer.convertTime(playedTime));
+                 jpTotalTime.text($.jPlayer.convertTime(totalTime));
+
+                 //demoStatusInfo(this.element, jpStatus); // This displays information about jPlayer's status in the demo page
+               })
+      .jPlayer("onSoundComplete", function() {
+                 //this.element.jPlayer("play");
+               });
+
+    var contentFlow = new ContentFlow('contentFlow', { circularFlow: false } ) ;
+  });

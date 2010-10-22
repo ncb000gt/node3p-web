@@ -1,0 +1,420 @@
+/*
+ * -----------------------------------------------
+ * www.happyworm.com
+ * silvia benvenuti
+ * 
+ * jPlayer.css
+ * -----------------------------------------------
+ */
+
+body {
+	background-color: #fff;
+	color: #333;
+	font: 1em/1.6 Verdana, Arial, sans-serif;
+	margin:0;
+	padding:0;
+}
+
+#container {
+	padding: 20px 10px;
+	margin: 0 auto;
+	width: 978px;
+	overflow: hidden;
+}
+
+#branding {
+	width: 280px;
+}
+
+h1 {
+	color:#a0a600;
+	font-weight:normal;
+	text-indent:28px;
+	font-size:13.5px;
+	margin-top:0;
+}
+
+h2 {
+	color:#a0a600;
+}
+
+h2 a{
+	text-decoration:none;
+	border-bottom: 1px solid #009be3;
+}
+
+h3 {
+	margin: 0;
+	padding: 0;
+}
+
+h4 {
+	margin-top: 2.5em;
+	margin-bottom:-.5em;
+}
+
+a img {
+	border: none;
+	outline:none;	
+}
+
+#menu {
+	text-align: left;
+	font-size: 0.8em;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 706px;
+	margin-left:272px;
+	margin-top:-54px;
+	margin-right:0;
+	overflow: hidden;
+}
+
+#menu li {
+	float: left;
+	margin: 0;
+	margin-right: 3px;
+}
+
+#menu li a{
+	display: block;
+	width: 85px;
+	height: 51px;
+	text-indent:-999px;
+	overflow: hidden;
+}
+
+#home a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) 0 -51px no-repeat;
+}
+#home a:hover{
+	background: url(../graphics/jplayer_menu_sprites.jpg) 0 0 no-repeat;
+}
+body.jplayer #home a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) 0 -102px no-repeat;
+}
+
+#demos a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -85px -51px no-repeat;
+}
+#demos a:hover{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -85px 0 no-repeat;
+}
+body.demos #demos a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -85px -102px no-repeat;
+}
+
+#download a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -170px -51px no-repeat;
+}
+#download a:hover{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -170px 0 no-repeat;
+}
+body.download #download a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -170px -102px no-repeat;
+}
+
+#dev_guide a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -255px -51px no-repeat;
+}
+#dev_guide a:hover{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -255px 0 no-repeat;
+}
+body.dev_guide #dev_guide a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -255px -102px no-repeat;
+}
+
+#support a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -340px -51px no-repeat;
+}
+#support a:hover{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -340px 0 no-repeat;
+}
+body.support #support a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -340px -102px no-repeat;
+}
+
+#sites a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -425px -51px no-repeat;
+}
+#sites a:hover{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -425px 0 no-repeat;
+}
+body.sites #sites a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -425px -102px no-repeat;
+}
+
+#skins a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -510px -51px no-repeat;
+}
+#skins a:hover{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -510px 0 no-repeat;
+}
+body.skins #skins a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -510px -102px no-repeat;
+}
+
+#about a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -595px -51px no-repeat;
+}
+#about a:hover{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -595px 0 no-repeat;
+}
+body.about #about a{
+	background: url(../graphics/jplayer_menu_sprites.jpg) -595px -102px no-repeat;
+}
+
+#breadcrumbs {
+	list-style-type:none;
+	margin: 0 ;
+	padding: 0;
+	width: 100%;
+	overflow: hidden;
+	font-size:.9em;
+}
+
+#breadcrumbs li{
+	float: left;
+	color: #666;
+	padding-right: .5em;
+}
+
+#menu_download {
+	float: right;
+	width: 206px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style-type:none;
+}
+
+#menu_download li{
+	float: left;
+}
+
+#menu_download a{
+	display: block;
+	width: 206px;
+	height: 94px;
+}
+
+#menu_download a:active {
+	top: 0px;
+}
+
+#menu_download #plugin a{
+	background: url(../graphics/jplayer_download_sprites.jpg) 0 0 no-repeat;
+}
+
+#menu_download #plugin a:hover{
+	background: url(../graphics/jplayer_download_sprites.jpg) 0 -94px no-repeat;
+}
+
+#menu_download a span{
+	display: block;
+	text-indent:-999px;
+}
+
+#content_main {
+	width: 685px;
+	float: left;
+	font-size: 0.8em;
+}
+
+#content_main img{
+	float: right;
+	margin: 0 0 20px 20px;
+}
+
+body.release_notes #content_main li {
+	margin-bottom:8px;
+}
+
+.float_right {
+	clear: both;
+	float: right;
+}
+
+#footer {
+	width: 685px;
+	font-size: 0.6em;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 20px;
+	clear:both;
+}
+
+#footer p{
+	width: 540px;
+	float: left;
+	margin-top: 40px;
+}
+
+
+#twitter {
+	display: block;
+	width: 100px;
+	text-decoration:none;
+	padding: 10px;
+	overflow:hidden;
+	text-align:right;
+}
+
+#twitter img {
+	float: left;
+}
+
+#twitter:hover {
+	background-color:#eee;
+}
+
+
+div.section {
+	padding:1em 0;
+	overflow: hidden;
+	border-bottom:1px dotted #009be3;
+}
+
+div.section a:active {
+	position: relative;
+	top: 1px;
+}
+
+div.demo_section_top {
+	border:none;
+	padding-bottom:0;
+}
+
+div.demo_section_mid {
+	border:none;
+	padding:0;
+}
+
+div.demo_section_bot {
+	padding-top:0;
+}
+
+a {
+	color:#009be3;
+}
+
+a:link {
+	color:#009be3;
+}
+
+a:visited {
+	color:#009be3;
+}
+
+a:hover {
+	color:#009be3;
+}
+
+#content_sub {
+	width: 264px;
+	margin-left: 714px;
+	margin-top: 3.2em;
+	font-size:.7em;
+}
+
+#content_sub h2 {
+	font-size:1.1em;
+	color: #333;
+	margin-top: 0;
+}
+
+#content_sub .section {
+	border: none;
+}
+
+#content_sub .highlight {
+	padding: 1em;
+	margin: 0 0 1em 0;
+	border: 1px dotted #009be3;
+}
+
+#content_sub ul{
+	margin: 0;
+	padding: 0;
+	list-style-type:none;	
+}
+
+.date {
+	margin: 0;
+	padding: 0;
+	font-style:oblique;
+}
+
+dt {
+	font-weight: bold;
+	color:#a0a600;
+}
+
+dd {
+	margin: 0 0 .5em 0;
+}
+
+dl dl {
+	margin-left: 20px;
+}
+
+dl dl dt{
+	color: #000;
+}
+
+
+dl dl dl dt{
+	font-style: oblique;
+	margin-top: .5em;
+	margin-bottom: -.5em;
+}
+
+code {
+	font-size:1.3em;
+	color: #000;
+	background-color: #eee;
+}
+
+.explanation {
+	font-size:.8em;
+	font-style: oblique;
+}
+
+.explanation code {
+	font-size:1.4em;
+}
+
+pre {
+	padding: .5em;
+	border:  1px solid #ccc;
+	background-color:#eee;
+	overflow: auto;
+	color: #000;
+}
+
+.miaow {
+	font-size:.8em;
+	color:#999;
+}
+
+.center {
+	text-align: center;
+}
+
+.flattr,
+.plegie {
+	margin-top: 1em;
+}
+
+div.obsolete {
+	background-color:#ffeeee;
+	border: 1px dashed #ff3333;
+	font-weight:bold;
+	color:#ff0000;
+	padding:0 10px;
+	margin-bottom:10px;
+}

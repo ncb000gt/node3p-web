@@ -3,12 +3,10 @@ html(lang="en")
   head
     title Node3p Web Downloader
     link(href="/css/core.css",rel="stylesheet",type="text/css")
-    link(href="/css/MooFlowNode3p.css",rel="stylesheet",type="text/css")
-    link(href="/css/ReMooz.css",rel="stylesheet",type="text/css")
-    script(src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.5/mootools-yui-compressed.js")
-    script(src="/js/mootools-1.2-more.js")
-    script(src="/js/ReMooz.js")
-    script(src="/js/MooFlow.js")
+    link(href="/css/jplayer.blue.monday.css",rel="stylesheet",type="text/css")
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js")
+    script(src="/js/ContentFlow/contentflow.js",load="white")
+    script(src="/js/jquery.jplayer.min.js")
     script(src="/js/home.js")
   body
     #container
@@ -23,10 +21,41 @@ html(lang="en")
             input(,type="file",id="file",name="file")
           fieldset
             input(type="submit",value="Upload")
-        div(id="MooFlow")
-          - each album in albums
-            a(href=album.key.large_image,rel="image")
-              img(src=album.key.image,title=album.key.album+' by ' +album.key.primary)
+        #jquery_jplayer
+        .jp-single-player
+          .jp-interface
+            ul.jp-controls
+              li
+                a#jplayer_play.jp-play(href="#",tabindex="1") play
+              li
+                a#jplayer_pause.jp-pause(href="#",tabindex="1") pause 
+              li
+                a#jplayer_stop.jp-stop(href="#",tabindex="1") stop 
+              li
+                a#jplayer_volume_min.jp-volume-min(href="#",tabindex="1") min volume 
+              li
+                a#jplayer_volume_max.jp-volume-max(href="#",tabindex="1") max volume 
+            .jp-progress
+              #jplayer_load_bar.jp-load-bar
+                #jplayer_play_bar.jp-play-bar 
+            #jplayer_volume_bar.jp-volume-bar
+              #jplayer_volume_bar_value.jp-volume-bar-value 
+            #jplayer_play_time.jp-play-time 
+            #jplayer_total_time.jp-total-time
+
+        #contentFlow.ContentFlow
+          .loadIndicator
+            .indicator
+          .flow
+            - each album in albums
+              .item
+                img.content(src=album.key.image,title=album.key.album+' by ' +album.key.primary)
+                .caption #{album.key.album} by #{album.key.primary}
+          .globalCaption
+          .scrollbar
+            .slider
+              .position
+
       #footer.contentbox
         p
           | Node3p and Node3p-web were developed by Nick Campbell (
