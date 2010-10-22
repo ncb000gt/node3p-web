@@ -1,0 +1,20 @@
+/* ========== ContentFlow ========== */
+/*
+ * Within this file you can adjust the styling of ContentFlow
+ * to your personal needs. The default styling is the same as found on the 
+ * project page.
+ *
+ * To utilze this file for global styleing, rename it to 'mycontentflow.css'.
+ */
+
+.ContentFlow {
+    border:3px solid #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-bottom-radius: 10px;
+    width:100%;
+    padding:9px;
+}
+
+/* ================================= */
+
