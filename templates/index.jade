@@ -8,6 +8,8 @@ html(lang="en")
     script(src="/js/ContentFlow/contentflow.js",load="white")
     script(src="/js/jquery.jplayer.min.js")
     script(src="/js/home.js")
+    script
+      | var file = "#{song}";
   body
     #container
       #header.contentbox
@@ -21,6 +23,7 @@ html(lang="en")
             input(,type="file",id="file",name="file")
           fieldset
             input(type="submit",value="Upload")
+
         #jquery_jplayer
         .jp-single-player
           .jp-interface

@@ -28,6 +28,7 @@ div.jp-playlist-player {
 	color: #666;
 }
 div.jp-interface {
+    margin:10px auto;
 	position: relative;
 	background-color:#eee;
 	width:418px;
