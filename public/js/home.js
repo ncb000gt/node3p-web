@@ -18,7 +18,16 @@ $(document).ready(
       .jPlayer("onSoundComplete", function() {
                });
 
-    var contentFlow = new ContentFlow('contentFlow', { circularFlow: false } ) ;
+    var contentFlow = new ContentFlow('contentFlow', { circularFlow: false ,
+                                                       onclickInactiveItem: function (item) {
+                                                         this.conf.onclickActiveItem(item);
+                                                       },
+
+                                                       onclickActiveItem: function (item) {
+                                                         console.log(item.item);
+                                                         if ($(item.item).hasClass('active')) console.log('clicked');
+                                                       }
+                                                     } ) ;
     if (file) play(file);
   });
 
