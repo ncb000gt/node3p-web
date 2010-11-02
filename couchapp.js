@@ -24,3 +24,9 @@ ddoc.views.getDailyFiles = {
         }
     }
 };
+
+ddoc.views.getFiles = {
+    map: function(doc) {
+        emit(doc._id, doc.filename);
+    }
+};

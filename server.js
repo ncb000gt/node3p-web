@@ -35,11 +35,9 @@ function render_index(req, res, errs, message) {
                     Store.getFiles(1, function(err, files) {
                                      if (err) sys.debug(JSON.stringify(err));
                                      if (files) {
-                                       sys.puts(JSON.stringify(files));
                                        var song = files[0].value;
                                        if (STRIP_PATH) song = song.replace(STRIP_PATH, '/music/');
                                        locals.song = song;
-                                       sys.puts(JSON.stringify(locals.song));
                                      }
                                      res.writeHead(200, { "Content-Type": "text/html" });
                                      jade.renderFile(
