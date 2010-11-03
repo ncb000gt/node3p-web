@@ -58,3 +58,14 @@ form{
     display:block;
     margin:auto;
 }
+#drop_zone{
+    padding:9px;
+    border:3px solid #333;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-bottom-radius: 10px;
+    width:100%;
+    text-align:center;
+    height: 100px;
+    background: #fff;
+}

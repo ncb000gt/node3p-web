@@ -15,14 +15,9 @@ html(lang="en")
       #header.contentbox
         h1 Node3p Web
       #content
-        p Find an AmazonMP3 file (something with a .amz extension). Click 'Upload' and wait.
-        - if (error_message)
-          p.err There was a problem: #{error_message}
-        form(action="/",method="POST",enctype="multipart/form-data")
-          fieldset.file
-            input(,type="file",id="file",name="file")
-          fieldset
-            input(type="submit",value="Upload")
+        #drop_zone
+          h3 Drag and Drop an AmazonMP3 File to Upload
+          h3 >> Here <<
 
         #jquery_jplayer
         .jp-single-player
