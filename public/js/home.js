@@ -3,7 +3,30 @@ $(document).ready(
         dnd();
         player();
         contentFlow();
+        sockets();
+    }
+);
+
+function sockets() {
+    var socket = new io.Socket('localhost');
+    socket.connect();
+    socket.on('message', function(data) {
+        eval('data = ' + data+';');
+        $.gritter.add({
+            // (string | mandatory) the heading of the notification
+            title: 'Downloads',
+            // (string | mandatory) the text inside the notification
+            text: 'All of your files have been downloaded.',
+            // (string | optional) the image to display on the left
+            image: data.files[0].image,
+            // (bool | optional) if you want it to fade out on its own or just sit there
+            sticky: false,
+            // (int | optional) the time you want it to be alive for before fading out
+            time: ''
+        });
+        //socket.disconnect();
     });
+};
 
 var setEvent = (function () {
     //from html5demos by @rem
@@ -95,10 +118,6 @@ function dnd() {
             xhr.send(builder);
 
             xhr.onload = function(event) {
-                //If we got an error display it.
-                if (xhr.responseText) {
-                    console.log(xhr.responseText);
-                }
             };
 
             // Prevent FireFox opening the dragged file.

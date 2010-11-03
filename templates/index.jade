@@ -2,14 +2,18 @@
 html(lang="en")
   head
     title Node3p Web Downloader
-    link(href="/css/core.css",rel="stylesheet",type="text/css")
-    link(href="/css/jplayer.blue.monday.css",rel="stylesheet",type="text/css")
+    link(href="/css/core.css",rel="stylesheet")
+    link(href="/css/jplayer.blue.monday.css",rel="stylesheet")
+    link(href="/css/jquery.gritter.css",rel="stylesheet")
     script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js")
     script(src="/js/ContentFlow/contentflow.js",load="white")
     script(src="/js/jquery.jplayer.min.js")
+    script(src="/js/jquery.gritter.min.js")
     script(src="/js/home.js")
+    script(src="/js/socket.io/socket.io.js")
     script
       | var file = "#{song}";
+      | var WEB_SOCKET_SWF_LOCATION = '/js/socket.io/lib/vendor/web-socket-js/WebSocketMainInsecure.swf';
   body
     #container
       #header.contentbox
